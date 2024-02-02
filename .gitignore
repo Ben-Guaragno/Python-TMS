@@ -4,6 +4,9 @@
 #Data file
 data.csv
 
+#Config file
+.config
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
