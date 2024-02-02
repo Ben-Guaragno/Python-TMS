@@ -1,0 +1,19 @@
+<!-- <meta http-equiv="refresh" content="0; URL=/cgi-bin/hello.py" /> -->
+<!-- Redirects to a cgi script -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+<p><a href="/cgi-bin/lightOn.py">Light on</a></p>
+<p><a href="/cgi-bin/lightOff.py">Light off</a></p>
+<p><a href="/cgi-bin/check_updates.py">apt update</a></p>
+<p><a href="/cgi-bin/list_upgradable.py">apt list --upgradable</a></p>
+<p><a href="/cgi-bin/temp_humid.py">Check Temp & Humidity</a></p>
+<p><a href="/cgi-bin/historic_temp_humid.py">Historic Temp & Humidity</a></p>
+<p>Maybe add an option to execute apt upgrade? Would need to ensure that user input is not required. Otherwise not sure what subprocess would do when prompted for input. Also don't want to deal with sanitizing user input anyway.</p>
+</body>
+</html>
