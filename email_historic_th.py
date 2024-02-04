@@ -13,7 +13,7 @@ def main():
     is_email=config.read("EMAIL_HISTORIC_TH")["EMAIL_HISTORIC_TH"]
     if is_email=='F':
         #Emailing not enabled, stop
-        print("Stopping")
+        print("Emailing not enabled, stopping")
         return
 
     data=read_data.read_data_pretty(8)
