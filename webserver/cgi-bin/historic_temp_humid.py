@@ -21,7 +21,7 @@ Content-Type: text/html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="/styles.css?get=1" type="text/css">
+<link rel="stylesheet" href="/styles.css?v=1" type="text/css">
 </head>
 <body>
 <h1>Temperature and Humidity</h1>
