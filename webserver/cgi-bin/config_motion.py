@@ -3,6 +3,7 @@
 import os
 import urllib.parse
 import requests
+import time
 
 def wrapped_get(s):
     try:
@@ -28,6 +29,11 @@ if "set" in args.keys():
     elif args["set"][0]=='Restart':
         arg_motion='Restart'
         wrapped_get("http://localhost:8081/0/action/restart")
+    elif args["set"][0]=='Restartpause':
+        arg_motion='Restart & Pause'
+        arg_motion+="<br>"+wrapped_get("http://localhost:8081/0/action/restart")
+        time.sleep(4)
+        arg_motion+="<br>"+wrapped_get("http://localhost:8081/0/detection/pause")
     else:
         arg_motion=None
 else:
@@ -39,7 +45,7 @@ if not arg_motion:
     motion_cur_status=wrapped_get("http://localhost:8081/0/detection/status")
     motion_cur_status_str="<p><b>Motion status:</b> "+motion_cur_status+"</p>"
 
-#Print out if email setting updated
+#Print out if motion setting updated
 arg_motion_str=""
 if arg_motion!=None:
     arg_motion_str="<p><b>Motion set to:</b> "+arg_motion+"</p>"
@@ -58,7 +64,10 @@ Content-Type: text/html
 <br>
 <p><a href="/index_example.html">Back to Options</a></p>
 <br>
-<p><a href="/cgi-bin/config_motion.py">Raw reload</a></p>
+<p style="display: flex;justify-content: space-between;">
+<span><a href="/cgi-bin/config_motion.py">Raw reload</a></span>
+<a href="http://10.0.0.239:8081">Motion webpage</a>
+</p>
 <br>
 {arg_motion_str}
 {motion_cur_status_str}
@@ -74,6 +83,10 @@ Content-Type: text/html
 </button>
 <button onclick="window.location.href='/cgi-bin/config_motion.py?set=Restart';">
     Motion Restart
+</button>
+<br><br>
+<button onclick="window.location.href='/cgi-bin/config_motion.py?set=Restartpause';">
+    Motion Restart+Pause
 </button>
 
 </body>
