@@ -3,9 +3,12 @@
 	body {
 		font-size: 300%;
 	}
+	select {
+		font-size: 125%;
+	}
 }
 @media only screen and (min-device-width : 480px) {
-	body {
+	body, select {
 		font-size: 125%;
 	}
 }
@@ -23,14 +26,14 @@ button{
 }
 
 /*Inner vertical lines in tables*/
-table {
+table.thformat{
     border-collapse: collapse;
 }
-table td:not(:last-child), table th:not(:last-child) {
+table.thformat td:not(:last-child), table.thformat th:not(:last-child) {
 	border-right: .2rem solid black;
 	padding-right: 10px;
 }
-table td:not(:first-child), table th:not(:first-child) {
+table.thformat td:not(:first-child), table.thformat th:not(:first-child) {
 	padding-left: 10px;
 }
 
