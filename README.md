@@ -1,8 +1,9 @@
 # Python-TMS
-Python Temperature Monitoring System
+Python <ins>T</ins>emperature <ins>M</ins>onitoring <ins>S</ins>ystem[^1]
+
+[^1]:The project now encompasses other controls on the Pi, but the majority of code still relates to TMS functionality. Also I like the name.
 
 Python scripts to read temperature data from a DHT20 connected to a Raspberry Pi Zero W. A Python Webserver facilitates on-demand access to data, as well as basic configuration options. SMTP emailing through Gmail is utilized for scheduled outbound data, which eliminates the need for port-forwarding and direct access to the Pi outside of the LAN.
-
 
 ### Crontab
 Crontab is configured as below:
