@@ -17,17 +17,18 @@ time_int=int(time_raw)
 #Ensure values are always 4 chars
 #Truncates if >99         (101.5 -> 0101)
 #Adds leading zero if >10 (  9.4 -> 09.4)
+#   Trailing '.' is placed if negative (-80.1 -> -80.)
 def len_fixer(s):
     if len(s)>4:
         s=s[:-2]
     if len(s)<4:
-        s='0'+s
+        if s[0]=='-':
+            #Negative
+            s=s+'.'
+        else:
+            #Positive
+            s='0'+s
     return s
-
-#if len(temp_f_string)<4:
-#    temp_f_string='0'+temp_f_string
-#if len(rh_string)<4:
-#    rh_string='0'+rh_string
 
 temp_f_string=len_fixer(temp_f_string)
 rh_string=len_fixer(rh_string)

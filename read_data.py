@@ -35,5 +35,5 @@ def read_data_pretty(num_lines):
 
 if __name__ == '__main__':
     print(read_data(1))
-    print(read_data(2))
+    print(read_data(50))
     print(read_data_pretty(2))
